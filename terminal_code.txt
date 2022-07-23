@@ -1,0 +1,225 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS D:\codingblock\web development\L8> git log
+commit 332dc0713f1fa8f60782b65e2ec9604a13e82252 (HEAD -> master)
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:03:01 2022 +0530
+
+    Adding important code in file1 and file2, also creating file2
+
+commit 2b32c4289fb27e24e2f84504d01494e51ec1a66b
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 14:50:11 2022 +0530
+
+    adding code in file1 and creating new file2
+
+commit a78c830de6c9b293e6bdad77316820f9bdbd904d
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 14:26:14 2022 +0530
+
+PS D:\codingblock\web development\L8> git checkout master
+Already on 'master'
+PS D:\codingblock\web development\L8> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\codingblock\web development\L8> git branch
+* master
+PS D:\codingblock\web development\L8> git branch updates
+PS D:\codingblock\web development\L8> git branch
+* master
+  updates
+PS D:\codingblock\web development\L8> git checkout updates
+Switched to branch 'updates'
+PS D:\codingblock\web development\L8> git branch
+  master
+* updates
+PS D:\codingblock\web development\L8> git add -A
+PS D:\codingblock\web development\L8> git status
+On branch updates
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file1.txt
+        modified:   file2.txt
+
+PS D:\codingblock\web development\L8> git commit -m "updating text in file1 and file2"
+[updates 24ea20b] updating text in file1 and file2
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+PS D:\codingblock\web development\L8> git log
+commit 24ea20b045b5a07cbb4cca34bc82c531b785878f (HEAD -> updates)
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:31:19 2022 +0530
+
+    updating text in file1 and file2
+
+commit 332dc0713f1fa8f60782b65e2ec9604a13e82252 (master)
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:03:01 2022 +0530
+
+    Adding important code in file1 and file2, also creating file2
+
+commit 2b32c4289fb27e24e2f84504d01494e51ec1a66b
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 14:50:11 2022 +0530
+
+PS D:\codingblock\web development\L8> git status
+On branch updates
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\codingblock\web development\L8> git add -A
+PS D:\codingblock\web development\L8> git commit -m "adding git details in file3.txt"
+[updates 763cf73] adding git details in file3.txt
+ 1 file changed, 1 insertion(+)
+PS D:\codingblock\web development\L8> git log
+commit 763cf73f8cc068e763ab23b6fe36fd30bee2be5e (HEAD -> updates)
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:33:14 2022 +0530
+
+    adding git details in file3.txt
+
+commit 24ea20b045b5a07cbb4cca34bc82c531b785878f
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:31:19 2022 +0530
+
+    updating text in file1 and file2
+
+commit 332dc0713f1fa8f60782b65e2ec9604a13e82252 (master)
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:03:01 2022 +0530
+
+PS D:\codingblock\web development\L8> git branch
+  master
+* updates
+PS D:\codingblock\web development\L8> git checkout master
+Switched to branch 'master'
+PS D:\codingblock\web development\L8> git merge updates
+Updating 332dc07..763cf73
+Fast-forward
+ file1.txt | 2 +-
+ file2.txt | 2 +-
+ file3.txt | 1 +
+ 3 files changed, 3 insertions(+), 2 deletions(-)
+PS D:\codingblock\web development\L8> git log
+commit 763cf73f8cc068e763ab23b6fe36fd30bee2be5e (HEAD -> master, updates)
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:33:14 2022 +0530
+
+    adding git details in file3.txt
+
+commit 24ea20b045b5a07cbb4cca34bc82c531b785878f
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:31:19 2022 +0530
+
+    updating text in file1 and file2
+
+commit 332dc0713f1fa8f60782b65e2ec9604a13e82252
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:03:01 2022 +0530
+
+...skipping...
+commit 763cf73f8cc068e763ab23b6fe36fd30bee2be5e (HEAD -> master, updates)
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:33:14 2022 +0530
+
+    adding git details in file3.txt
+
+commit 24ea20b045b5a07cbb4cca34bc82c531b785878f
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:31:19 2022 +0530
+
+    updating text in file1 and file2
+
+commit 332dc0713f1fa8f60782b65e2ec9604a13e82252
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:03:01 2022 +0530
+
+...skipping...
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+HELP -- Press RETURN for more, or q when done...skipping...
+commit 763cf73f8cc068e763ab23b6fe36fd30bee2be5e (HEAD -> master, updates)
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:33:14 2022 +0530
+
+    adding git details in file3.txt
+
+commit 24ea20b045b5a07cbb4cca34bc82c531b785878f
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:31:19 2022 +0530
+
+    updating text in file1 and file2
+
+commit 332dc0713f1fa8f60782b65e2ec9604a13e82252
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:03:01 2022 +0530
+
+PS D:\codingblock\web development\L8> git branch
+* master
+  updates
+PS D:\codingblock\web development\L8> git branch
+* master
+  new-launch
+  updates
+PS D:\codingblock\web development\L8> git checkout -b testing-branch
+Switched to a new branch 'testing-branch'
+PS D:\codingblock\web development\L8> git branch
+  master
+  new-launch
+* testing-branch
+  updates
+PS D:\codingblock\web development\L8> git checkout master
+Switched to branch 'master'
+PS D:\codingblock\web development\L8> git branch
+* master
+  new-launch
+  testing-branch
+  updates
+PS D:\codingblock\web development\L8> git branch -D testing-branch  
+Deleted branch testing-branch (was 63fcc99).
+PS D:\codingblock\web development\L8> git branch random1
+PS D:\codingblock\web development\L8> git branch random2
+PS D:\codingblock\web development\L8> git branch random3
+PS D:\codingblock\web development\L8> git log
+commit 63fcc9905d99adf54dc15b1a8f7391db83a326c3 (HEAD -> master, random3, random2, random1, new-launch)
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:45:25 2022 +0530
+
+    Adding new launch features
+
+commit 763cf73f8cc068e763ab23b6fe36fd30bee2be5e (updates)
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:33:14 2022 +0530
+
+    adding git details in file3.txt
+
+commit 24ea20b045b5a07cbb4cca34bc82c531b785878f
+Author: Siddharth <sidpunia63@gmail.com>
+Date:   Sun Jul 17 15:31:19 2022 +0530
+
+PS D:\codingblock\web development\L8> git branch -D random1
+Deleted branch random1 (was 63fcc99).
+PS D:\codingblock\web development\L8> git branch -D random2
+Deleted branch random2 (was 63fcc99).
+PS D:\codingblock\web development\L8> git branch -D random3
+Deleted branch random3 (was 63fcc99).
+PS D:\codingblock\web development\L8> 
